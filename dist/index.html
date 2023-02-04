@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="output.css" rel="stylesheet" />
+    <script src="app.js" defer></script>
+  </head>
+  <body
+    class="bg-gray-100 h-screen font-sans bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div class="container mx-auto my-10 w-1/2">
+      <div class="flex justify-between">
+        <h1
+          class="text-5xl font-semibold mb-5 uppercase tracking-[.25em] text-white">
+          Todo
+        </h1>
+        <img src="../assets/icon-moon.svg" class="h-full cursor-pointer mr-4" />
+      </div>
+
+      <form class="w-full" onsubmit="addTask(); return false;">
+        <input
+          id="new-task"
+          type="text"
+          class="w-4/5 p-4 rounded-lg mb-7 bg-white"
+          placeholder="Add a new task" />
+        <button
+          type="submit"
+          class="bg-[#efd0f3] text-black font-semibold text-lg rounded-lg p-4 w-1/6">
+          Add
+        </button>
+      </form>
+      <div class="mr-4">
+        <ul id="tasks" class="rounded-lg bg-gray-50">
+          <div
+            class="flex flex-row justify-around pt-2 text-gray-500 font-normal cursor-pointer">
+            <p class="hover:text-black">Items: <span id="count">2</span></p>
+            <div class="flex flex-row">
+              <p class="hover:text-black pr-2">All</p>
+              <p class="hover:text-black pr-2">Active</p>
+              <p class="hover:text-black">Completed</p>
+            </div>
+            <div class="flex flex-row">
+              <p class="hover:text-black">Clear Completed</p>
+            </div>
+          </div>
+          <li
+            class="p-5 flex justify-between items-center border-b-[0.1rem] border-gray-400">
+            <div>
+              <input
+                id="checkbox-1"
+                type="checkbox"
+                class="mr-4"
+                onchange="strikeThroughText(event)" />
+              <span id="text-1">Task 1</span>
+            </div>
+
+            <img
+              src="../assets/icon-cross.svg"
+              onclick="deleteTask(event);"
+              class="cursor-pointer h-[0.9rem]" />
+          </li>
+          <li
+            class="p-5 flex justify-between items-center border-b-[0.1rem] border-gray-400">
+            <div>
+              <input
+                id="checkbox-1"
+                type="checkbox"
+                class="mr-4"
+                onchange="strikeThroughText(event);" />
+              <span class="">Task 2</span>
+            </div>
+
+            <img
+              src="../assets/icon-cross.svg"
+              onclick="deleteTask(event);"
+              class="cursor-pointer h-[0.9rem]" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
